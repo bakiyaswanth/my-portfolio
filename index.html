@@ -71,12 +71,15 @@
     <h3>Get In Touch</h3>
     <p class="leading">El psy congroo</p>
     <form>
-      <input type="text" placeholder='NAME'>
-      <input type="email" placeholder='EMAIL'>
-      <textarea placeholder='YOUR MESSAGE'></textarea>
-      <button class="button">Send </button>
+      <input id="name" type="text" placeholder='NAME'>
+      <input  id="email" type="email" placeholder='EMAIL'>
+      <textarea id="message" placeholder='YOUR MESSAGE'></textarea>
+      <button type="submit" class="button">Send </button>
+    </form>
+    <div style="text-align: center;">
       <li><a href="#"><img src="assets/Untitled-1 copy.jpg" alt="my self"></a></li>
       <h5 style="color:white;"> Baki Yaswanth Reddy</h5>
+    </div>
   </section>
   <footer>
     <div class="grid">
@@ -87,5 +90,18 @@
       </ul>
     </div>
   </footer>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name= form.name.value;
+      console.log(name)
+      const email= form.email.value;
+      console.log(email)
+      const message= form.message.value;
+      console.log(message);
+      window.location.href = 'mailto:bakiyaswanth2001@hotmail.com?subject=Hi, I am -' + name + ' (' + email + ')' + '&body=' + message +'&bcc='+email;
+    })
+  </script>
 </body>
 </html>
